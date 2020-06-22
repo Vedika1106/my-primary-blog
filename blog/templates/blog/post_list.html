@@ -3,15 +3,19 @@
         <title>Vedika's blog</title>
     </head>
     <body>
+        { % for post in posts %}
+        {{ posts }}
         <div>
-            <h1><a href="/">Vedika's Blog</a></h1>
+            <p>published: {{post.published_date }}</p>,
+            <h2><a href="">{{post.title}}</a></h2>
+            <p>{{ post.text |linebreaksbr }}</p>
         </div>
-        {% for post in posts %}
-    <div>
-        <p>published: {{ post.published_date }}</p>
-        <h2><a href="">{{ post.title }}</a></h2>
-        <p>{{ post.text|linebreaksbr }}</p>
-    </div>
-{% endfor %}
+        { % endfor %}
+        {{ posts }}
+        <div>
+            <p>published: 21.06.2014, 12:14
+            <h2><a href="">My second post</a></h2>
+            </p>
+        </div>
     </body>
 </html>
